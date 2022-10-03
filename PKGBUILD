@@ -8,7 +8,7 @@ url='https://github.com/baduhai/Koi'
 license=('LGPL3')
 depends=('plasma-desktop' 'kconfig' 'kcoreaddons' 'kwidgetsaddons')
 makedepends=('qt5-base')
-source=("https://github.com/baduhai/Koi/archive/${pkgver}.tar.gz")
+source=("https://github.com/baduhai/Koi/archive/refs/tags/{%=pkgver}.tar.gz")
 sha256sums=('811f6bdaa8146f0da6103742816cc48f571d344d2cd8cd9ac2448ca518825e32')
 
 build() {
