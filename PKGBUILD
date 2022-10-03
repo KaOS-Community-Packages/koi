@@ -1,4 +1,5 @@
 pkgname=koi
+_pkgname=Koi
 pkgver=0.2.3
 pkgrel=1
 pkgdesc='Switch between light and dark themes on KDE Plasma'
@@ -11,7 +12,7 @@ source=("https://github.com/baduhai/Koi/archive/${pkgver}.tar.gz")
 sha256sums=('811f6bdaa8146f0da6103742816cc48f571d344d2cd8cd9ac2448ca518825e32')
 
 build() {
-	cd "Koi-$pkgver/src"
+	cd "$_pkgname-$pkgver/src"
     mkdir -p build && cd build
 
     cmake \
@@ -22,7 +23,7 @@ build() {
 }
 
 package() {
-    cd "Koi-$pkgver"
+    cd "$_pkgname-$pkgver"
     install -D "src/build/bin/koi" "$pkgdir/usr/bin/koi"
     install -Dm644 "src/koi.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
     install -Dm644 "src/resources/icons/koi.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/$pkgname.svg"
