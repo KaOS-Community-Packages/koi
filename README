@@ -1,8 +1,4 @@
-<p align="center"><img src="src/resources/icons/koi.svg" alt="Koi" width="128" height="128"></p>
 
-<h1 align="center">Koi</h1> 
-
-<h3 align="center">Theme scheduling for the KDE Plasma Desktop</h3>
 
 Koi is a program designed to provide the KDE Plasma Desktop functionality to automatically switch between light and dark themes. Koi is under active development, and while it is stable enough to use daily, expect bugs. Koi is designed to be used with Plasma, and while some features may function under different desktop environments, they are unlikely to work and untested.
 
@@ -17,10 +13,6 @@ Koi is a program designed to provide the KDE Plasma Desktop functionality to aut
 - Change GTK theme.
 - Change wallpaper.
 - Hide application to system tray.
-
-## Screenshots
-
-![Screenshot](screenshot.png)
 
 ## Using Koi
 
