@@ -6,8 +6,8 @@ pkgdesc='Switch between light and dark themes on KDE Plasma'
 arch=('x86_64')
 url='https://github.com/baduhai/Koi'
 license=('LGPL3')
-depends=('plasma-desktop' 'kconfig' 'kcoreaddons' 'kwidgetsaddons')
-makedepends=('qt5-base')
+depends=('plasma-desktop' 'kcoreaddons' 'kwidgetsaddons' 'kconfig' 'kconfigwidgets' 'kpackage' 'xsettingsd' 'hicolor-icon-theme')
+makedepends=('qt5-base' 'cmake' 'extra-cmake-modules')
 source=("https://github.com/baduhai/Koi/archive/refs/tags/${pkgver}.tar.gz")
 sha256sums=('811f6bdaa8146f0da6103742816cc48f571d344d2cd8cd9ac2448ca518825e32')
 
