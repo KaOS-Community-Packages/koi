@@ -1,18 +1,18 @@
 pkgname=koi
 _pkgname=Koi
-pkgver=0.2.3
-pkgrel=2
+pkgver=0.3
+pkgrel=1
 pkgdesc='Switch between light and dark themes on KDE Plasma'
 arch=('x86_64')
 url='https://github.com/baduhai/Koi'
 license=('LGPL3')
 depends=('plasma-desktop' 'kcoreaddons' 'kwidgetsaddons' 'kconfig' 'kconfigwidgets' 'kpackage' 'xsettingsd' 'hicolor-icon-theme')
 makedepends=('qt5-base' 'cmake' 'extra-cmake-modules')
-source=("https://github.com/baduhai/Koi/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('811f6bdaa8146f0da6103742816cc48f571d344d2cd8cd9ac2448ca518825e32')
+source=("https://github.com/MartinVonReichenberg/Koi/archive/refs/heads/master.tar.gz")
+sha256sums=('SKIP')
 
 build() {
-    cd "$_pkgname-$pkgver/src"
+    cd "$_pkgname-master/src"
     mkdir -p build && cd build
 
     cmake \
@@ -23,6 +23,6 @@ build() {
 }
 
 package() {
-    cd "$_pkgname-$pkgver/src/build"
-    make DESTDIR="${pkgdir}" install
+    cd "$_pkgname-master/src/build"
+    make DESTDIR="$pkgdir" install
 }
