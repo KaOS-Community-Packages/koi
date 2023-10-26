@@ -1,28 +1,32 @@
-pkgname=koi
-_pkgname=Koi
-pkgver=0.3
+pkgname='koi'
+_pkgname='Koi'
+pkgver=0.2.3
+_pkgver=master
 pkgrel=1
-pkgdesc='Switch between light and dark themes on KDE Plasma'
+pkgdesc="Scheduled LIGHT/DARK Theme Switching for the KDE Plasma Desktop"
 arch=('x86_64')
-url='https://github.com/baduhai/Koi'
+url="https://github.com/baduhai/Koi"
 license=('LGPL3')
-depends=('plasma-desktop' 'kcoreaddons' 'kwidgetsaddons' 'kconfig' 'kconfigwidgets' 'kpackage' 'xsettingsd' 'hicolor-icon-theme')
-makedepends=('qt5-base' 'cmake' 'extra-cmake-modules')
-source=("https://github.com/MartinVonReichenberg/Koi/archive/refs/heads/master.tar.gz")
+depends=('plasma-desktop' 'plasma-integration' 'plasma-framework' 'kcoreaddons'
+         'kwidgetsaddons' 'kconfig' 'kconfigwidgets' 'kpackage' 'hicolor-icon-theme')
+makedepends=('glibc' 'qt5-base' 'qt5-svg' 'qt5-svg' 'cmake' 'extra-cmake-modules')
+optdepends=('desktop-file-utils: Command line utilities for working with desktop entries'
+            'xsettingsd: Apply settings to GTK applications on the fly')
+source=(${_pkgname}-${_version}.tar.gz::"https://github.com/baduhai/Koi/archive/refs/heads/master.tar.gz")
 sha256sums=('SKIP')
 
 build() {
-    cd "$_pkgname-master/src"
+	cd "${_pkgname}-${_pkgver}/src"
     mkdir -p build && cd build
 
     cmake \
-      -DCMAKE_INSTALL_PREFIX=/usr \
-      ..
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    ..
 
-    make
+    make all
 }
 
 package() {
-    cd "$_pkgname-master/src/build"
-    make DESTDIR="$pkgdir" install
+    cd "${_pkgname}-${_pkgver}/src/build"
+    make DESTDIR="${pkgdir}" install all
 }
