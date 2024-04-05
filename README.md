@@ -1,6 +1,6 @@
 # Koi
 
-### [SOURCE](https://github.com/baduhai/Koi) | [FORK](https://github.com/MartinVonReichenberg/Koi)
+### [SOURCE](https://github.com/baduhai/Koi)
 
 #### <h3 align="center">Theme scheduling for the KDE Plasma Desktop 
 
